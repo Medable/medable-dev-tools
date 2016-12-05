@@ -1,7 +1,7 @@
 {
   "name": "medable-dev-tools",
   "main": "./lib/medable-dev-tools",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Tools for working with Medable Cortex scripts and versioning orgs in source control",
   "keywords": [],
   "activationCommands": {
@@ -34,8 +34,14 @@
       "default": "api.dev.medable.com",
       "description": "The Medable environment you wish to connect to (e.g. Development or Production).",
       "enum": [
-        {"value": "api.dev.medable.com", "description": "Development (recommended)"},
-        {"value": "api.medable.com", "description": "Production (careful!)"}
+        {
+          "value": "api.dev.medable.com",
+          "description": "Development (recommended)"
+        },
+        {
+          "value": "api.medable.com",
+          "description": "Production (careful!)"
+        }
       ],
       "order": 0
     },
