@@ -1,0 +1,21 @@
+{
+  "menu": [
+    {
+      "label": "Medable",
+      "submenu": [
+        {
+          "label": "Pull All",
+          "command": "medable-dev-tools:pull"
+        },
+        {
+          "label": "Pull All (Force)",
+          "command": "medable-dev-tools:forcePull"
+        },
+        {
+          "label": "Push Scripts",
+          "command": "medable-dev-tools:push"
+        }
+      ]
+    }
+  ]
+}
