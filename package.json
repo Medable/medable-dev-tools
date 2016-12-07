@@ -17,13 +17,16 @@
   },
   "dependencies": {
     "async": "^2.1.2",
+    "atom-space-pen-views": "^2.2.0",
     "fs-plus": "^2.9.3",
     "jsonfile": "^2.4.0",
     "junk": "^2.0.0",
+    "keytar": "^3.0.2",
     "moment": "^2.15.2",
     "pluralize": "^3.0.0",
     "request": "^2.76.0",
     "sanitize-filename": "^1.6.1",
+    "space-pen": "^5.1.2",
     "underscore": "^1.8.3",
     "underscore.deep": "^0.5.1"
   },
