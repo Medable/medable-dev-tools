@@ -7,7 +7,8 @@
   "activationCommands": {
     "atom-workspace": [
       "medable-dev-tools:pull",
-      "medable-dev-tools:push"
+      "medable-dev-tools:push",
+      "medable-dev-tools:forcePull"
     ]
   },
   "repository": "https://github.com/timrsmith/medable-dev-tools",
