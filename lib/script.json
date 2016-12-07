@@ -1,0 +1,24 @@
+{
+    "active": true,
+    "configuration": {
+        "acl": [
+            {
+                "target": "000000000000000000000004",
+                "type": 3
+            },
+            {
+                "target": "000000000000000000000007",
+                "type": 3
+            }
+        ],
+        "apiKey": null,
+        "method": "get",
+        "path": "ide/:element/x",
+        "plainText": false,
+        "priority": 0,
+        "urlEncoded": false
+    },
+    "label": "IDE - Get Objects",
+    "script": "var request = require('request'),\n    options = {skipAcl: true, grant: 7, limit: 1000};\noptions.paths = request.query.paths;\nreturn require('wrapped')(request.params.element, options).find();",
+    "type": "route"
+}

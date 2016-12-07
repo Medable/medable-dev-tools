@@ -1,7 +1,7 @@
 {
   "name": "medable-dev-tools",
   "main": "./lib/medable-dev-tools",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tools for working with Medable Cortex scripts and versioning orgs in source control",
   "keywords": [],
   "activationCommands": {
@@ -22,7 +22,6 @@
     "fs-plus": "^2.9.3",
     "jsonfile": "^2.4.0",
     "junk": "^2.0.0",
-    "keytar": "^3.0.2",
     "moment": "^2.15.2",
     "pluralize": "^3.0.0",
     "request": "^2.76.0",

@@ -1,10 +1,12 @@
 fs = require('fs-plus')
 pkg = require('./package.json')
+script = require('./script.json')
 utils = require('./utils')
 srcDir = atom.project.getPaths()[0]
 config = module.exports =
   local: {}
   package: pkg
+  script: script
   setLocalConfig: (isUpdate) ->
     if Object.keys(config.local).length > 0 and !isUpdate
       return

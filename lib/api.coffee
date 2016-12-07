@@ -10,7 +10,6 @@ api = module.exports =
     'https://' + config.env + '/' + config.org + '/v2/'
 
   call: (method, url, options, callback) ->
-    console.log(cookieJar);
     if typeof options == 'function'
       callback = options
       options = {}
