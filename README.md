@@ -1,5 +1,10 @@
 # medable-dev-tools package
 
-A short description of your package.
+This atom package makes it easy to download all of your Medable Cortex org configuration for versioning. Additionally, you can edit your scripts and save your scripts back to your org, making it much easier to develop your Cortex scripts. 
 
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+## Installing
+
+To install the package, just go to `Atom > Preferences > Install`
+
+And in the search field, type `medable` and hit `enter`. This will bring up the `medable-developer-tools` package. Click `Install` to install the package. Once the packge is installed, you'll see a `Settings` button appear for the packge. Click on that button to enter in the setting for your org.
+
