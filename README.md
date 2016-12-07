@@ -12,7 +12,7 @@ Then you'll need to install the `medable-developer-tools` package. To do so, jus
 
 ![Install Packages](https://cloud.githubusercontent.com/assets/1857984/20955426/099fdaf8-bbf8-11e6-90fa-423a616881a0.png)
 
-And in the search field, type `medable` and hit `enter`. This will bring up the `medable-developer-tools` package. Click `Install` to install the package. 
+And in the search field, type `medable` and hit `enter`. This will bring up the `medable-dev-tools` package. Click `Install` to install the package. 
 
 ![Install](https://cloud.githubusercontent.com/assets/1857984/20955427/09a8e576-bbf8-11e6-80fa-880b9cd782bd.png)
 
