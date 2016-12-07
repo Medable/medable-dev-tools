@@ -14,7 +14,7 @@ module.exports =
         @h1 'Log in to Medable'
         @subview 'usernameEditor', new MiniTextView("Username")
         @subview 'passwordEditor', new PasswordView("Password")
-        @subview 'secondFactorEditor', new PasswordView("Two-factor code (if enabled)"),
+        @subview 'secondFactorEditor', new PasswordView("Verification code"),
         @div class: 'text-error block', outlet: 'errorLabel'
         @div class: 'block', =>
           @button id: 'loginButton', class: 'btn btn-primary', outlet: 'loginButton', 'Log in'
@@ -33,8 +33,8 @@ module.exports =
       @enable()
       @watchevents(callback)
       @modalPanel.show()
-      @errorLabel.hide()
       @secondFactorEditor.hide()
+      @errorLabel.hide()
       @usernameEditor.focus()
 
     hide: ->
@@ -70,13 +70,21 @@ module.exports =
       loginBody =
         email: @username
         password: @password
+        location:
+          verificationToken: @secondFactor
       loginUrl  = api.baseUrl()+'accounts/login'
 
       api.post loginUrl, loginBody, (error, response, body) =>
         if !error
-          atom.notifications.addSuccess('Login successful')
-          callback()
-          @hide()
+          if(body.code == 'kUnverifiedLocation' || body.code == 'kNewLocation')
+            @errorLabel.text('Verify location: Enter the verification code you received via SMS and log in again')
+            @errorLabel.show()
+            @secondFactorEditor.show()
+            @enable()
+          else
+            atom.notifications.addSuccess('Login successful')
+            callback()
+            @hide()
         else
           @errorLabel.text('Login error: ' + error.message)
           @errorLabel.show()

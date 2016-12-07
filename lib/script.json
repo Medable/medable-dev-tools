@@ -13,7 +13,7 @@
         ],
         "apiKey": null,
         "method": "get",
-        "path": "ide/:element/x",
+        "path": "ide/:element",
         "plainText": false,
         "priority": 0,
         "urlEncoded": false
