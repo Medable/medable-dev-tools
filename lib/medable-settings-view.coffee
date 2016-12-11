@@ -101,7 +101,7 @@ module.exports =
 
     setApiLink: ->
       if (@envModel.getText() and @orgNameModel.getText())
-        @apiLink.attr 'href': 'https://'+@envModel.getText().replace('api','app')+'/'+@orgNameModel.getText()
+        @apiLink.attr 'href': 'https://'+@envModel.getText().replace('api','app')+'/'+@orgNameModel.getText()+'/settings/apps'
         @apiLink.show()
       else
         @apiLink.hide()

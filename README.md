@@ -1,43 +1,76 @@
-# medable-dev-tools package
+# Medable Dev Tools Atom Package
 
 This atom package makes it easy to download all of your Medable Cortex org configuration for versioning. Additionally, you can edit your scripts and save your scripts back to your org, making it much easier to develop your Cortex scripts.
 
 ## Installing
 
+Download and install Atom from https://atom.io
+
+Open Atom, open up `Atom > Preferences` and select `Install`
+
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/20955426/099fdaf8-bbf8-11e6-90fa-423a616881a0.png" width="250" align="center"/>
+</p>
+
+In the search field, type `medable` and hit `enter`. This will bring up the `medable-dev-tools` package. Click `Install` to install the package.
+
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/20955427/09a8e576-bbf8-11e6-80fa-880b9cd782bd.png" width="600" align="center"/>
+</p>
+
+Restart Atom
+
+## Using Medable Dev Tools
+
 To get started, create a new folder for your project and open it in Atom.
-![Open...](https://cloud.githubusercontent.com/assets/1857984/21078592/ee47be1c-bf29-11e6-871f-af47ca57fb06.png)
 
-You'll have a new empty project that looks something like this.
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/21078592/ee47be1c-bf29-11e6-871f-af47ca57fb06.png" width="450" align="center"/>
+</p>
 
-![Empty project](https://cloud.githubusercontent.com/assets/1857984/20955425/098ac6d6-bbf8-11e6-89b1-8881e07e0482.png)
+You'll have a new empty project that looks similar to this.
 
-Then you'll need to install the `medable-developer-tools` package. To do so, just go to `Atom > Preferences > Install`
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/20955425/098ac6d6-bbf8-11e6-89b1-8881e07e0482.png" width="600" align="center"/>
+</p>
 
-![Install Packages](https://cloud.githubusercontent.com/assets/1857984/20955426/099fdaf8-bbf8-11e6-90fa-423a616881a0.png)
+To enable Medable Dev Tools in your project, from the Packages menu choose Medable > Enable
 
-And in the search field, type `medable` and hit `enter`. This will bring up the `medable-dev-tools` package. Click `Install` to install the package.
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/21078593/ee4873e8-bf29-11e6-8f66-6c581f9fcf81.png" width="600" align="center"/>
+</p>
 
-![Install](https://cloud.githubusercontent.com/assets/1857984/20955427/09a8e576-bbf8-11e6-80fa-880b9cd782bd.png)
+Specify the Medable settings for your project:
+ - Environment
+  - `api.dev.medable.com` for your dev environment (recommended)
+  - `api.medable.com` for you prod environment
+ - Org Name
+  - The unique name for your org. This is the org name you specified when signing up.
+ - API Key
+  - A session-based API key for your org. You can get this key from the `Settings > Apps` menu in your org control panel. You can also click on the `Get API Key` link which will take you to your control panel to log in.
+  - If you don't yet have an API key, see[Generating an API Key](https://docs.medable.com/getting_started/generating_api_key) in the Medable docs.
 
-Once the packge is installed, click on the Packages menu and choose Medable > Enable
-
-![Endable](https://cloud.githubusercontent.com/assets/1857984/21078593/ee4873e8-bf29-11e6-8f66-6c581f9fcf81.png)
-
-This will bring up the Medable Settings for your project. Enter the `Environment` for your org (for either dev or prod), enter in the `Org Name` for your org, and the `API Key`.
-
-![Settings Entered](https://cloud.githubusercontent.com/assets/1857984/21078596/ee4ae768-bf29-11e6-89b5-7fbf6cbeb3fa.png)
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/21078596/ee4ae768-bf29-11e6-89b5-7fbf6cbeb3fa.png" width="600" align="center"/>
+</p>
 
 Now, you'll see a `Medable` menu in the menu bar. From the `Medable`, select `Pull All`.
 
-![Pull all](https://cloud.githubusercontent.com/assets/1857984/21078594/ee498896-bf29-11e6-94f9-5dabbbcb5bbd.png)
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/21078594/ee498896-bf29-11e6-94f9-5dabbbcb5bbd.png" width="450" align="center"/>
+</p>
 
 You'll then be prompted to log into your org.
 
-![Log in](https://cloud.githubusercontent.com/assets/1857984/20955433/09b99a1a-bbf8-11e6-84b8-c86f3e52f860.png)
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/20955433/09b99a1a-bbf8-11e6-84b8-c86f3e52f860.png" width="600" align="center"/>
+</p>
 
 After logging in, you'll see the Pull take place. You'll see a new folder structure appear in your project for all of your org elements.
 
-![Folders](https://cloud.githubusercontent.com/assets/1857984/20955434/09bd390e-bbf8-11e6-82aa-702fa8687c5f.png)
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/20955434/09bd390e-bbf8-11e6-82aa-702fa8687c5f.png" width="250" align="center"/>
+</p>
 
 These folders contain all of the definitions for your org configuration. From here, you can now commit this project to source control to begin versioning your org config.
 
