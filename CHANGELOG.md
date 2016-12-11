@@ -23,3 +23,6 @@
 ## 0.4.2 - Various fixes
 * Lazy-loading package on Enable
 * Improved ReadMe
+
+## 0.4.3 - ReadMe Update
+* ReadMe update

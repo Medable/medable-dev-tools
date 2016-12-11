@@ -18,7 +18,25 @@ In the search field, type `medable` and hit `enter`. This will bring up the `med
 <img src="https://cloud.githubusercontent.com/assets/1857984/20955427/09a8e576-bbf8-11e6-80fa-880b9cd782bd.png" width="600" align="center"/>
 </p>
 
-Restart Atom
+From `Atom > Preferences` select `Core` settings. Then, add `.medable` to the list of ignored file names.
+
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/21082603/a1959d36-bf93-11e6-996b-044eca00f156.png" width="600" align="center"/>
+</p>
+
+Then, select `Packages` and search for `Tree-View` and click on the `Settings` button.
+
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/21082625/2985381e-bf94-11e6-8aeb-43f68a5e6167.png" width="500" align="center"/>
+</p>
+
+From the Tree-View package settings, check the check box to `Hide Ignored Names`
+
+<p align="center">
+<img src="https://cloud.githubusercontent.com/assets/1857984/21082604/a1a9e23c-bf93-11e6-8f4c-f3ae0b498989.png" width="500" align="center"/>
+</p>
+
+Now restart Atom
 
 ## Using Medable Dev Tools
 
