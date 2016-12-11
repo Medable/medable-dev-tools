@@ -4,7 +4,7 @@
   "version": "0.4.3",
   "description": "Tools for working with Medable Cortex scripts and versioning orgs in source control",
   "keywords": [],
-  "repository": "https://github.com/timrsmith/medable-dev-tools",
+  "repository": "https://github.com/medable/medable-dev-tools",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
