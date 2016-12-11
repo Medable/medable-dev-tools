@@ -13,3 +13,6 @@
 
 ## 0.3.0 - Updated ReadMe
 * Updated ReadMe
+
+## 0.4.0 - Project support
+* Added project-specific settings

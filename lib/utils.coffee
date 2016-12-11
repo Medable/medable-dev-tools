@@ -8,8 +8,8 @@ moment = require('moment')
 config = require('./config')
 _ = require('underscore')
 _.mixin require('underscore.deep')
-srcDir = atom.project.getPaths()[0]
 utils = module.exports =
+
   basePath: (path) ->
     pathArray = path.split('/')
     pathArray[0]
@@ -23,17 +23,28 @@ utils = module.exports =
       if pkg.hasOwnProperty(key)
         if ! !pkg[key].pull
           elements.push key
-          dir = srcDir + '/' + key
+          dir = config.srcDir + '/' + key
           utils.createDir dir
     elements
 
   createDir: (dir) ->
-    if !fs.existsSync(dir)
+    if !utils.exists(dir)
       fs.mkdirSync dir
     return
 
+  createFile: (path, body, options={}) ->
+    if !utils.exists(path) or options.overwrite
+      if options.json
+        jsonfile.writeFileSync path, body, spaces: 2
+      else
+        fs.writeFileSync path, body
+    return
+
   dirName: (filePath) ->
-    utils.basePath path.dirname(filePath).replace(srcDir + '/', '')
+    utils.basePath path.dirname(filePath).replace(config.srcDir + '/', '')
+
+  exists: (path) ->
+    fs.existsSync(path);
 
   inPayload: (id, payload) ->
     _.isObject _.find(payload, (obj) ->
@@ -41,7 +52,7 @@ utils = module.exports =
     )
 
   isModified: (path, stats) ->
-    if !fs.existsSync(path)
+    if !utils.exists(path)
       return false
     stats = stats or fs.statSync(path)
     mtime = stats.mtime.getTime()
@@ -55,13 +66,13 @@ utils = module.exports =
 
   processElement: (element, options) ->
     if element.hasOwnProperty('templates')
-      utils.createDir srcDir + '/templates/' + element.type
+      utils.createDir config.srcDir + '/templates/' + element.type
       for i of element.templates
         element.templates[i].object = 'template'
         element.templates[i].templateType = element.type
         utils.processElement element.templates[i], options
       return
-    dir = srcDir + '/' + pluralize(element.object) + (if element.type then '/' + pluralize(element.type) else if element.templateType then '/' + element.templateType else '')
+    dir = config.srcDir + '/' + pluralize(element.object) + (if element.type then '/' + pluralize(element.type) else if element.templateType then '/' + element.templateType else '')
     filename = sanitize(element.label or element.name)
     jsonFile = dir + '/' + filename + '.json'
     jsBody = element.script
@@ -76,16 +87,17 @@ utils = module.exports =
       if utils.isModified(jsFile) and !options.overwrite
         atom.notifications.addWarning 'Skipping ' + path.basename(jsFile) + '. Local changes will be lost.<br/>Push changes or use pull force to overwrite locally.'
         return
-      if fs.existsSync(jsFile) and ! !options.overwrite
+      if utils.exists(jsFile) and ! !options.overwrite
         fs.unlinkSync jsFile
       fs.writeFileSync jsFile, jsBody
       utils.setDates jsFile, dateString
     if utils.isModified(jsonFile) and !options.overwrite
       atom.notifications.addWarning 'Skipping ' + path.basename(jsonFile) + '. Local changes will be lost.<br/>Push changes or use pull force option to overwrite locally.'
       return
-    if fs.existsSync(jsonFile) and (! !options.overwrite or ! !element.templateType)
+    if utils.exists(jsonFile) and (options.overwrite or element.templateType)
       fs.unlinkSync jsonFile
-    jsonfile.writeFileSync jsonFile, element, spaces: 2
+    options.json = true;
+    utils.createFile jsonFile, element, options
     utils.setDates jsonFile, dateString
     return
 
@@ -110,7 +122,7 @@ utils = module.exports =
           else
             jsonFile = JSON.parse(fs.readFileSync(file, 'utf-8'))
             jsFileName = path.basename(file, '.json') + '.js'
-            if fs.existsSync(jsFileName)
+            if utils.exists(jsFileName)
               jsFile = fs.readFileSync(jsFileName, 'utf-8')
           if !utils.inPayload(jsonFile._id, payload)
             if jsFile
@@ -139,7 +151,7 @@ utils = module.exports =
   walkDirs: (dir, filelist) ->
     mdJunk = /^config\.local\.json$|^\.git$|^\.gitignore$/
     junk.re = new RegExp(junk.re.source + mdJunk.source)
-    walkdir = dir or srcDir
+    walkdir = dir or config.srcDir
     files = fs.readdirSync(walkdir)
     fullPath = undefined
     stats = undefined
@@ -155,13 +167,3 @@ utils = module.exports =
         filelist.push fullPath
       return
     filelist
-
-  watchLocalConfig: ->
-    localConfig = srcDir + '/config.local.json'
-    if fs.existsSync(localConfig)
-      console.log 'Detected local config'
-      fs.watchFile localConfig, (curr, prev) ->
-        console.log 'Local config updated'
-        config.setConfig true
-        return
-    return
