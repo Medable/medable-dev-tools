@@ -16,3 +16,7 @@
 
 ## 0.4.0 - Project support
 * Added project-specific settings
+
+## 0.4.1 - Various fixes
+* Lazy-loading package on Enable
+* Improved ReadMe
