@@ -18,5 +18,8 @@
 * Added project-specific settings
 
 ## 0.4.1 - Various fixes
+* Removed unused global settings
+
+## 0.4.2 - Various fixes
 * Lazy-loading package on Enable
 * Improved ReadMe
