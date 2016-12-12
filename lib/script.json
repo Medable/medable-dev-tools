@@ -18,7 +18,7 @@
         "priority": 0,
         "urlEncoded": false
     },
-    "label": "IDE - Get Objects",
-    "script": "var request = require('request'),\n    options = {skipAcl: true, grant: 7, limit: 1000};\noptions.paths = request.query.paths;\nreturn require('wrapped')(request.params.element, options).find();",
+    "label": "Dev Tools - Get Objects",
+    "script":"/***********************************************************\n\n@script\t\tDev Tools - Get Objects\n\n@brief\t\tThis script is created by Medable Dev Tools for Atom\n\n@version\t0.0.0\tMedable.TRS\n\tReleased\n\n(c)2016 Medable, Inc.  All Rights Reserved.\nUnauthorized use, modification, or reproduction is prohibited.\n***********************************************************/\n\nvar request = require('request'),\n    options = {skipAcl: true, grant: 7, limit: 1000};\noptions.paths = request.query.paths;\nreturn require('wrapped')(request.params.element, options).find();",
     "type": "route"
 }
