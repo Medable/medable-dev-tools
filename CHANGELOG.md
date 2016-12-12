@@ -38,3 +38,6 @@
 
 ### 0.4.7 - Bug Fix
 * Menu rendering fix
+
+### 0.4.8 - Bug Fix
+* Error handling in push request
