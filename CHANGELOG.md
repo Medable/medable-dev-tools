@@ -35,3 +35,6 @@
 
 ### 0.4.6 - Maintenance
 * Removed errant menu item
+
+### 0.4.6 - Bug Fix
+* Menu rendering fix
