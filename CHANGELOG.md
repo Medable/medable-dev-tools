@@ -41,3 +41,6 @@
 
 ### 0.4.8 - Bug Fix
 * Error handling in push request
+
+### 0.4.9 - Bug Fix
+* Error handling in push request
