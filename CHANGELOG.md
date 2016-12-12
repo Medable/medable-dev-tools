@@ -32,3 +32,6 @@
 
 ### 0.4.5 - Maintenance
 * Updated proto route script
+
+### 0.4.6 - Maintenance
+* Removed errant menu item
