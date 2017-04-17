@@ -72,6 +72,8 @@ module.exports =
         password: @password
         location:
           verificationToken: @secondFactor
+          locationName: 'IDE'
+          singleUse: true
       loginUrl  = api.baseUrl()+'accounts/login'
 
       api.post loginUrl, loginBody, (error, response, body) =>
