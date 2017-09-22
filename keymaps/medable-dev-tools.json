@@ -1,6 +1,7 @@
 {
   "atom-workspace": {
     "ctrl-alt-p": "medable-dev-tools:pull",
-    "ctrl-alt-l": "medable-dev-tools:push"
+    "ctrl-alt-l": "medable-dev-tools:push",
+    "ctrl-alt-/": "medable-dev-tools:runScript"
   }
 }

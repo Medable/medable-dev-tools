@@ -5,8 +5,7 @@
     "paths":["label","description","active","principal","script","configuration.urlEncoded","configuration.plainText","configuration.apiKey","configuration.path","configuration.method","configuration.priority","configuration.object","configuration.event","configuration.inline","configuration.export","configuration.cron"]
   },
   "objects":{
-    "pull":true,
-    "path": "routes/ide/"
+    "pull":true
   },
   "views":{
     "pull":true
