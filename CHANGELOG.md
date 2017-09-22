@@ -45,7 +45,7 @@
 ### 0.4.9 - Bug Fix
 * Error handling in push request
 
-### 0.5.0 - CoffeeScript -> ES6
+### 0.6.0 - CoffeeScript -> ES6
 * Converted to Javascript
 * Added auth token support
 * Added script runner support
