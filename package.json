@@ -10,17 +10,19 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "async": "^2.1.2",
     "atom-space-pen-views": "^2.2.0",
-    "fs-plus": "^2.9.3",
-    "jsonfile": "^2.4.0",
-    "junk": "^2.0.0",
-    "moment": "^2.15.2",
-    "pluralize": "^3.0.0",
-    "request": "^2.76.0",
+    "fs-plus": "^3.0.2",
+    "jsonfile": "^5.0.0",
+    "junk": "^2.1.0",
+    "md5": "^2.2.1",
+    "moment": "^2.22.2",
+    "pluralize": "^7.0.0",
     "sanitize-filename": "^1.6.1",
     "space-pen": "^5.1.2",
-    "underscore": "^1.8.3",
-    "underscore.deep": "^0.5.1"
+    "store": "^2.0.12",
+    "underscore": "^1.9.1",
+    "underscore.deep": "^0.5.1",
+    "whatwg-fetch": "^2.0.4",
+    "with-query": "^1.1.2"
   }
 }
